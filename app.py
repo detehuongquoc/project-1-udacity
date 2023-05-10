@@ -521,6 +521,12 @@ def create_show_submission():
     error = False
     body = {}
     try:
+        form = ShowForm()
+        if not form.validate():
+            body['success'] = False
+            body['msg'] = 'Form validation error'
+            body['errors'] = form.errors
+            return jsonify(body), 400
         data = request.get_json()
         show = Show()
 
