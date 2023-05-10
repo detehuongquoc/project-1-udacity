@@ -92,9 +92,9 @@ block content %}
         }
       }
     }
-    console.log(data);
     const headers = {
       "Content-Type": "application/json",
+      "X-CSRFToken": "{{ csrf_token() }}"
     };
     fetch("/artists/create", {
       method: "POST",

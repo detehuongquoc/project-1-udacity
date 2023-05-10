@@ -100,7 +100,8 @@ block content %}
     event.preventDefault();
     const headers = {
       "Content-Type": "application/json",
-    };
+      "X-CSRFToken": "{{ csrf_token() }}"
+     };
     fetch(`/venues/${id}`, {
       method: "DELETE",
       headers: headers,

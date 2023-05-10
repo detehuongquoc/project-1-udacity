@@ -106,6 +106,7 @@ block content %}
     }
     const headers = {
       "Content-Type": "application/json",
+      "X-CSRFToken": "{{ csrf_token() }}"
     };
     fetch("/venues/create", {
       method: "POST",

@@ -88,8 +88,9 @@
       }
       console.log(data);
       const headers = {
-        "Content-Type": "application/json",
-      };
+      "Content-Type": "application/json",
+      "X-CSRFToken": "{{ csrf_token() }}"
+    };
       fetch(`/venues/${id}/edit`, {
         method: "POST",
         headers: headers,

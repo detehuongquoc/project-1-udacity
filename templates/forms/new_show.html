@@ -44,6 +44,7 @@
     console.log(data)
     const headers = {
       "Content-Type": "application/json",
+      "X-CSRFToken": "{{ csrf_token() }}"
     };
     fetch("/shows/create", {
       method: "POST",
